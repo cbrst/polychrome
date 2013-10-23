@@ -1,0 +1,78 @@
+hi Normal background: <%= background[0].hex %>; color: <%= foreground.hex %>
+hi CmdLine background: <%= background[0].hex %>; color: <%= foreground.hex %>; transition: all 0.25s
+hi StatusLine background: transparent; color: <%= foreground.hex %>
+hi ContentSeparator border-top: 0 
+
+
+hi CompItem[selected] background: <%= color[2].hex %>; color: <%= color[8].hex %>
+hi CompTitle background: <%= color[9].hex %>; font-weight: bold
+hi CompTitle>* border-top: 1px solid <%= color[1].hex %>; border-bottom: 2px solid <%= color[9].hex %>; color: <%= foreground.hex %>; padding: 4px 0 0 4px
+
+hi Indicator color: <%= color[6].hex %>
+hi NonText color: <%= color[6].hex %>
+hi Null color: <%= color[6].hex %>
+hi Number color: <%= color[6].hex %>
+
+hi Disabled color: <%= color[1].hex %>
+hi Enabled color: <%= color[2].hex %>
+hi ErrorMsg background: <%= color[1].hex %>; color: <%= foreground.hex %>
+hi Filter border-radius: 2px; background: <%= color[3].hex %>; border: 1px solid <%= color[11].hex %>; color: <%= background[0].hex %>
+hi Function color: <%= color[6].hex %>
+
+hi HelpArg color: <%= color[2].hex %>
+hi HelpBody -append background: <%= background[0].hex %>; color: <%= foreground.hex %>
+hi HelpHead -append border-color: <%= color[5].hex %>; color: <%= color[13].hex %>
+hi HelpKey color: <%= color[2].hex %>
+hi HelpLink color: <%= color[4].hex %>
+hi HelpOptionalArg color: <%= color[6].hex %>
+hi HelpSpec -append color: <%= color[5].hex %>
+hi HelpSubhead -append border-color: <%= color[14].hex %>; color: <%= color[6].hex %>
+hi HelpSubsubhead -append border-color: <%= color[14].hex %>; color: <%= color[6].hex %>
+
+hi Hint font-weight: bold; color: <%= background[0].hex %>; background: <%= color[1].hex %>
+hi HintActive background: rgba(<%= color[2].rgb.r %>,<%= color[2].rgb.g %>,<%= color[2].rgb.b %>,0.2)
+hi HintElem background: rgba(<%= color[3].rgb.r %>,<%= color[3].rgb.g %>,<%= color[3].rgb.b %>,0.2)
+
+hi InfoMsg color: <%= color[5].hex %>
+hi Keyword color: <%= color[1].hex %>
+hi LineNr color: <%= color[11].hex %>
+hi Mapping color: <%= color[5].hex %>
+hi ModeMsg color: <%= foreground.hex %>; background: <%= color[10].hex %>
+hi MoreMsg background: <%= foreground.hex %>; color: <%= color[10].hex %>
+hi Object color: <%= color[4].hex %>
+hi PromptText color: <%= foreground.hex %>; background: <%= color[13].hex %>
+hi Question color: <%= foreground.hex %>; background: <%= color[2].hex %>; font-weight: bold
+hi String color: <%= color[2].hex %>
+hi Tag color: <%= color[4].hex %>
+hi Title color: <%= color[5].hex %>
+hi URL color: <%= color[10].hex %>
+hi WarningMsg color: <%= color[9].hex %>
+
+
+
+style chrome://* <<EOM
+
+	#navigator-toolbox {
+		border-bottom: none !important;
+	}
+
+	#TabsToolbar {
+		-moz-appearance: none !important;
+		background: <%= background[0].hex %> !important;
+		font-weight: bold !important;
+		color: <%= foreground.hex %> !important;
+	}
+
+	.tabbrowser-tab, .tabs-newtab-button {
+		-moz-appearance: none !important;
+		background: <%= background[2].hex %> !important;
+		border: none !important;
+		border-radius: 0px !important;
+		text-align: center !important;
+	}
+
+	.tabbrowser-tab[selected="true"] { background: <%= color[6].hex %> !important; color: <%= foreground.hex %> !important }
+	
+	.toolbarbutton-text { color: <%= color[11].hex %> !important }
+	.toolbarbutton-menu-dropmarker, .tab-icon-image, .tab-close-button { display: none !important }
+EOM
